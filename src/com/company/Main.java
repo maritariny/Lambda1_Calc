@@ -1,0 +1,20 @@
+package com.company;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        // Получение экземпляра класса Calculator с помощью статической переменной instance
+        Calculator calc = Calculator.instance.get();
+
+        int a = calc.plus.apply(1, 2);
+        int b = calc.minus.apply(1,1);
+
+        int c = calc.devide.apply(a, b);
+        // Возникает ошибка, т.к. происходит деление на 0,
+        // а в функциональном интерфейсе devide не было обработки этой ситуации
+
+        calc.println.accept(c);
+
+    }
+}
